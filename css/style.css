@@ -1,0 +1,93 @@
+/********* 00 Normalize CSS *********/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+/********* 01 Background *********/
+#background {
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+
+
+.container {
+  padding-top: 50px;
+}
+
+/********* 02 Panel **********/
+#panel {
+  width: 330px;
+  margin: 0 auto;
+}
+
+.row {
+  margin: 15px 0;
+  justify-content: space-between;
+}
+
+form {
+  display: inline-block;
+  margin: 0 10px;
+}
+/********* 02-1 color input ********/
+.slider .color, .slider .color-number {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.slider span {
+  border-radius: 3px;
+}
+
+.slider .color {
+  padding: 3px 10px;
+}
+ 
+.slider .color-number {
+  width: 72px;
+  padding: 3px 0;
+  text-align: center;
+}
+
+#red span {
+  background-color: #FF0000;
+}
+
+#green span {
+  background-color: #00FF00;
+}
+
+#blue span {
+  background-color: #0000FF;
+}
+
+
+input[type="range"] {
+  width: 180px;
+  margin-top: 10px;
+}
+
+/******** 02-2 color-output ********/
+#color-hex {
+  width: 100%;
+  height: 90px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  font-size: 56px;
+  font-weight: 700;
+  text-align: center;
+  display: grid;
+}
+
+#color-hex {
+  align-content: center;
+}
