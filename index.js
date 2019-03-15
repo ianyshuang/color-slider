@@ -1,32 +1,26 @@
-const redSlider = document.getElementById('red-slider')
-const greenSlider = document.getElementById('green-slider')
-const blueSlider = document.getElementById('blue-slider')
+const colorPanel = document.getElementById('color-panel')
 const background = document.getElementById('background')
 let redNumber = greenNumber = blueNumber = 0
 
-redSlider.addEventListener('change', event => {
-  let number = event.target.value
-  const numberField = event.target.parentElement.parentElement.nextElementSibling
-  numberField.textContent = number
-  redNumber = Number(number)
-  displayHex()
+colorPanel.addEventListener('change', event => {
+  if (event.target.matches('.form-control-range')) {
+    let number = event.target.value
+    const numberField = event.target.parentElement.parentElement.nextElementSibling
+    numberField.textContent = number
+    // 看是紅,綠,藍 哪一種顏色，並算出hex色碼
+    if (event.target.matches('#red-slider')) {
+      redNumber = Number(number)
+      displayHex()
+    } else if (event.target.matches('#green-slider')) {
+      greenNumber = Number(number)
+      displayHex()
+    } else {
+      blueNumber = Number(number)
+      displayHex()
+    }
+  }
 })
 
-greenSlider.addEventListener('change', event => {
-  let number = event.target.value
-  const numberField = event.target.parentElement.parentElement.nextElementSibling
-  numberField.textContent = number
-  greenNumber = Number(number)
-  displayHex()
-})
-
-blueSlider.addEventListener('change', event => {
-  let number = event.target.value
-  const numberField = event.target.parentElement.parentElement.nextElementSibling
-  numberField.textContent = number
-  blueNumber = Number(number)
-  displayHex()
-})
 
 const hexField = document.getElementById('color-hex')
 function displayHex() {
